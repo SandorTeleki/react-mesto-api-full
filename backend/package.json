@@ -1,13 +1,25 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Проект Mesto фронтенд + бэкенд",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint .",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SandorTeleki/react-mesto-api-full.git"
+  },
+  "keywords": [],
+  "author": "Sandor Teleki",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SandorTeleki/react-mesto-api-full/issues"
+  },
+  "homepage": "https://github.com/SandorTeleki/react-mesto-api-full#readme",
   "devDependencies": {
     "eslint": "^8.13.0",
     "eslint-config-airbnb-base": "^15.0.0",

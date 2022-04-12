@@ -1,0 +1,12 @@
+.auth__sign-in-link_active {
+    text-decoration: none;
+    margin-left: 5px;
+    color: white;
+    transition: .8s ease;
+}
+  
+.auth__sign-in-link_active:hover {
+    opacity: .6;
+    cursor: pointer;
+}
+

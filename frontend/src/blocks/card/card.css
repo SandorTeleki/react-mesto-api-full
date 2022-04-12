@@ -1,0 +1,19 @@
+.card {
+    display: grid;
+    grid-template-columns: 1fr 44px;
+    grid-template-rows: 282px 1fr;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #fff;
+    max-width: 282px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    overflow: hidden; /* so that if no picture is inputted, the corners of the no image don't bleed out */
+}
+
+@media screen and (min-width: 768px) {
+    .card {
+        margin: 0;
+    }
+    
+}

@@ -1,0 +1,11 @@
+.card__like-quantity {
+    width: 10px;
+    padding: 0;
+    margin: 3px 0 0;
+    min-height: 13px;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: normal;
+    text-align: center;
+    color: black;
+  }

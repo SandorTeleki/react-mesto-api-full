@@ -1,0 +1,47 @@
+.popup__submit-button {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2px;
+    border: 0;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    width: 238px;
+    align-self: center;
+}
+
+@media screen and (min-width: 900px) {
+    .popup__submit-button {
+        font-size: 18px;
+        line-height: 22px;
+        width: 358px;
+    }  
+}
+
+
+.popup__submit-button_active {
+    content: "Сохранить...";
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    color: white;
+  }
+
+.popup__submit-button_active::before {
+    display: flex;
+}
+
+.popup__submit-button:hover {
+    opacity: 0.8;
+    transition: .8s ease;
+}

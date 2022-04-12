@@ -1,0 +1,8 @@
+.card__reaction_active {
+    background: url(../../../../images/heart_full.svg) no-repeat;
+}
+
+.card__reaction_active:hover {
+    opacity: .5;
+    transition: .8s ease;
+}

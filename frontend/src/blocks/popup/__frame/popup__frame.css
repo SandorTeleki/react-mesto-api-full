@@ -1,0 +1,6 @@
+.popup__frame {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}

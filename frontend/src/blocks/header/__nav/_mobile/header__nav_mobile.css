@@ -1,0 +1,10 @@
+.header__nav_mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  margin-top: 0;
+  padding-top: 40px;
+  border-bottom: 1px solid rgba(84, 84, 84, .7);
+}

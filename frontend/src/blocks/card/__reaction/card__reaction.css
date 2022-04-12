@@ -1,0 +1,16 @@
+.card__reaction {
+    width: 22px;
+    height: 19px;
+    grid-row: 2/3;
+    grid-column: 2/3;
+    align-self: center;
+    padding: 0;
+    border: none;
+    background: url(../../../images/heart.svg) no-repeat;
+    cursor: pointer;
+}
+
+.card__reaction:hover {
+    opacity: .5;
+    transition: .8s ease;
+}

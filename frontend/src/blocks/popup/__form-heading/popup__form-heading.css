@@ -1,0 +1,20 @@
+.popup__form-heading {
+    text-align: center;
+    color: black;
+    width: 83.5%;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.22;
+    padding: 0;
+    margin: 25px auto 75px auto;
+}
+
+  
+@media screen and (min-width: 480px) {
+    .popup__form-heading {
+        width: 358px;
+        font-size: 24px;
+        line-height: 1.2;
+        margin: 34px auto 40px auto;
+    }
+}

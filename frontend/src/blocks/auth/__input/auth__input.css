@@ -1,0 +1,25 @@
+.auth__input {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.21;
+    color: rgba(204, 204, 204, 1);
+    background-color: black;
+    padding: 0 0 10px 0;
+    margin: 0 auto;
+    border: none;
+    border-bottom: 2px solid rgba(204, 204, 204, 1);
+    outline: none;
+    width: 83.5%;
+}
+
+  
+@media screen and (min-width: 530px) {
+    .auth__input {
+        width: 358px;
+      }  
+}
+  
+.auth__input::placeholder{
+    color: rgba(204, 204, 204, 1);
+}   

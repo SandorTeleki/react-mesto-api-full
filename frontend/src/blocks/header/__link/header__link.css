@@ -1,0 +1,29 @@
+.header__link {
+    color: rgba(169, 169, 169, 1);
+    font-size: 14px;
+    line-height: 1.22;
+    font-weight: 400;
+    margin-bottom: 30px;
+    margin-right: 0;
+    align-self: center;
+    text-decoration: none;
+    text-align: right;
+    transition:  .8s ease;
+}
+
+
+  
+.header__link:hover {
+    opacity: .6;
+    cursor: pointer;
+}
+  
+@media screen and (min-width: 480px) {
+    .header__link {
+        font-size: 18px;
+        margin: 0 0 41px 0;
+    }
+}
+  
+  
+  
