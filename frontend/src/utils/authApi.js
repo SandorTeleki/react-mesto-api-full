@@ -1,4 +1,4 @@
-const baseUrl = 'https://auth.nomoreparties.co';
+const baseUrl = 'https://api.sandorteleki.nomoredomains.work';
 const headers = { "Content-Type": "application/json"}
 
 const checkResponse = ((response)=>{

@@ -1,7 +1,6 @@
 class Api {
-    constructor({baseURL, headers}) {
+    constructor({baseURL}) {
       this._URL = baseURL;
-      this._headers = headers;
     }
   
     _handleError(res, errorText) {
@@ -11,28 +10,38 @@ class Api {
       return Promise.reject(`${errorText}. Статус ошибки: ${res.status}`);
     }
   
-    getUserInfo() {
+    getUserInfo(jwt) {
       return fetch(this._URL + '/users/me', {
-        method: 'GET', headers: this._headers,
-      })
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${jwt}`
+      }})
         .then((res) => {
           return this._handleError(res, 'Ошибка! Не удалось загрузить данные пользователя');
         });
     }
   
   
-    getInitialCards() {
+    getInitialCards(jwt) {
       return fetch(this._URL + '/cards', {
-        method: 'GET', headers: this._headers,
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${jwt}`}
       })
         .then(res => {
           return this._handleError(res, 'Ошибка! Не удалось загрузить карточки')
         });
     }
   
-    editProfile({name, description}) {
+    editProfile({name, description}, jwt) {
       return fetch(this._URL + '/users/me', {
-        method: 'PATCH', headers: this._headers, body: JSON.stringify({
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${jwt}`},
+        body: JSON.stringify({
           name: name, about: description
         })
       })
@@ -41,9 +50,13 @@ class Api {
         });
     }
   
-    updateUserAvatar(avatarLink) {
+    updateUserAvatar(avatarLink, jwt) {
       return fetch(this._URL + '/users/me/avatar', {
-        method: "PATCH", headers: this._headers, body: JSON.stringify({
+        method: "PATCH",
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${jwt}`},
+        body: JSON.stringify({
           avatar: avatarLink
         })
       })
@@ -52,9 +65,14 @@ class Api {
         });
     }
   
-    addNewCard({name, link}) {
+    addNewCard({name, link}, jwt) {
       return fetch(this._URL + '/cards', {
-        method: 'POST', headers: this._headers, body: JSON.stringify({
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${jwt}`
+        },
+        body: JSON.stringify({
           name: name, link: link
         })
       })
@@ -63,27 +81,38 @@ class Api {
         });
     }
   
-    deleteCard(cardId) {
+    deleteCard(cardId, jwt) {
       return fetch(this._URL + '/cards/' + cardId, {
-        method: 'DELETE', headers: this._headers,
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${jwt}`},
       })
         .then(res => {
           return this._handleError(res, 'Ошибка! Не удалось удалить карточку')
         });
     }
   
-    likeCard(cardId) {
+    likeCard(cardId, jwt) {
       return fetch(this._URL + '/cards/' + cardId + '/likes/', {
-        method: 'PUT', headers: this._headers,
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${jwt}`
+        },
       })
         .then(res => {
           return this._handleError(res, 'Ошибка! Не удалось поставить лайк карточке')
         });
     }
   
-    dislikeCard(cardId) {
+    dislikeCard(cardId, jwt) {
       return fetch(this._URL + '/cards/' + cardId + '/likes/', {
-        method: 'DELETE', headers: this._headers,
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${jwt}`
+      }
       })
         .then(res => {
           return this._handleError(res, 'Ошибка! Не удалось удалить лайк карточки')
@@ -92,9 +121,5 @@ class Api {
   }
 
 export const api = new Api ({
-    baseURL: 'https://mesto.nomoreparties.co/v1/cohort-31',
-    headers: {
-        authorization: '740b2dd9-b0c6-4001-a722-b6687d6e9ed0',
-        'Content-Type': 'application/json'
-    }
+    baseURL: 'https://api.sandorteleki.nomoredomains.work',
 });
